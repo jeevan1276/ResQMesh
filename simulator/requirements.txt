@@ -1,0 +1,3 @@
+# Python 3.9+ (built-in modules only for MVP)
+# No external dependencies needed for core simulator
+# Future: bitstring (Bloom filters), mmh3 (hashing)
