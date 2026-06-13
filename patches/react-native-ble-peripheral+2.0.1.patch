@@ -1,0 +1,477 @@
+diff --git a/node_modules/react-native-ble-peripheral/android/.classpath b/node_modules/react-native-ble-peripheral/android/.classpath
+new file mode 100644
+index 0000000..d9b92d6
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/.classpath
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25/"/>
++	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
++	<classpathentry kind="output" path="bin/default"/>
++</classpath>
+diff --git a/node_modules/react-native-ble-peripheral/android/.project b/node_modules/react-native-ble-peripheral/android/.project
+index 3964dd3..77239dc 100644
+--- a/node_modules/react-native-ble-peripheral/android/.project
++++ b/node_modules/react-native-ble-peripheral/android/.project
+@@ -1,10 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>android</name>
++	<name>react-native-ble-peripheral</name>
+ 	<comment>Project android created by Buildship.</comment>
+ 	<projects>
+ 	</projects>
+ 	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
+ 		<buildCommand>
+ 			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+ 			<arguments>
+@@ -12,6 +17,18 @@
+ 		</buildCommand>
+ 	</buildSpec>
+ 	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
+ 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+ 	</natures>
++	<filteredResources>
++		<filter>
++			<id>1781361509577</id>
++			<name></name>
++			<type>30</type>
++			<matcher>
++				<id>org.eclipse.core.resources.regexFilterMatcher</id>
++				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
++			</matcher>
++		</filter>
++	</filteredResources>
+ </projectDescription>
+diff --git a/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
+index 8c80c93..1675490 100644
+--- a/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
++++ b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.buildship.core.prefs
+@@ -1,2 +1,2 @@
+-#Thu Nov 30 08:38:54 IST 2017
+-connection.project.dir=
++connection.project.dir=../../../android
++eclipse.preferences.version=1
+diff --git a/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.jdt.core.prefs b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..96e40c8
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,4 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=25
++org.eclipse.jdt.core.compiler.compliance=25
++org.eclipse.jdt.core.compiler.source=25
+diff --git a/node_modules/react-native-ble-peripheral/android/build.gradle b/node_modules/react-native-ble-peripheral/android/build.gradle
+index 9b5638c..62e6189 100644
+--- a/node_modules/react-native-ble-peripheral/android/build.gradle
++++ b/node_modules/react-native-ble-peripheral/android/build.gradle
+@@ -1,22 +1,26 @@
++def safeExtGet(prop, fallback) {
++    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
++}
++
+ apply plugin: "com.android.library"
+ 
+ android {
+-    compileSdkVersion 23
+-    buildToolsVersion "23.0.3"
++    compileSdkVersion safeExtGet("compileSdkVersion", 34)
++    buildToolsVersion safeExtGet("buildToolsVersion", "34.0.0")
+ 
+     defaultConfig {
+-        minSdkVersion 23
+-        targetSdkVersion 23
++        minSdkVersion safeExtGet("minSdkVersion", 21)
++        targetSdkVersion safeExtGet("targetSdkVersion", 34)
+         versionCode 1
+         versionName "1.0"
+         ndk {
+-            abiFilters "armeabi-v7a", "x86"
++            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+         }
+     }
+ }
++
+ dependencies {
+-    compile fileTree(dir: "libs", include: ["*.jar"])
+-    compile "com.android.support:appcompat-v7:23.0.1"
+-    compile "com.facebook.react:react-native:+"  // From node_modules
++    implementation fileTree(dir: "libs", include: ["*.jar"])
++    implementation "androidx.appcompat:appcompat:1.6.1"
++    implementation "com.facebook.react:react-android"
+ }
+-
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/results.bin b/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..918230d
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/.transforms/8362fe6421a56ed502abeb32a5b31910/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/results.bin b/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..ef89a9a
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/.transforms/e9a9ab7ce4cf6e116dbabfb3a8a1f51c/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java b/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java
+new file mode 100644
+index 0000000..829fd3d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/generated/source/buildConfig/debug/com/himelbrand/ble/peripheral/BuildConfig.java
+@@ -0,0 +1,10 @@
++/**
++ * Automatically generated file. DO NOT MODIFY
++ */
++package com.himelbrand.ble.peripheral;
++
++public final class BuildConfig {
++  public static final boolean DEBUG = Boolean.parseBoolean("true");
++  public static final String LIBRARY_PACKAGE_NAME = "com.himelbrand.ble.peripheral";
++  public static final String BUILD_TYPE = "debug";
++}
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..3f0496d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.himelbrand.ble.peripheral" >
++
++    <uses-sdk android:minSdkVersion="24" />
++
++    <uses-permission android:name="android.permission.BLUETOOTH" />
++    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+new file mode 100644
+index 0000000..8280cde
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.himelbrand.ble.peripheral",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties b/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+new file mode 100644
+index 0000000..1211b1e
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+@@ -0,0 +1,6 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
++coreLibraryDesugaringEnabled=false
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar
+new file mode 100644
+index 0000000..389eca1
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar
+new file mode 100644
+index 0000000..367db2c
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..707c9ec
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1 @@
++#Sat Jun 13 19:56:25 IST 2026
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..e49472b
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml
+new file mode 100644
+index 0000000..b7dfbac
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugAssets/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\assets"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\debug\assets"/></dataSet><dataSet config="generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\build\intermediates\shader_assets\debug\compileDebugShaders\out"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+new file mode 100644
+index 0000000..5a0b965
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+new file mode 100644
+index 0000000..e0579af
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class
+new file mode 100644
+index 0000000..104823c
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/BuildConfig.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class
+new file mode 100644
+index 0000000..d481041
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$1.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class
+new file mode 100644
+index 0000000..0436b76
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule$2.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class
+new file mode 100644
+index 0000000..f17c913
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEModule.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class
+new file mode 100644
+index 0000000..2382f9d
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/himelbrand/ble/peripheral/RNBLEPackage.class differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+new file mode 100644
+index 0000000..78ac5b8
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+@@ -0,0 +1,2 @@
++R_DEF: Internal format may change without notice
++local
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..f29de44
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,14 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.himelbrand.ble.peripheral" >
++4
++5    <uses-sdk android:minSdkVersion="24" />
++6
++7    <uses-permission android:name="android.permission.BLUETOOTH" />
++7-->D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:5-68
++7-->D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:22-65
++8    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++8-->D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:5-74
++8-->D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:22-71
++9
++10</manifest>
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml b/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+new file mode 100644
+index 0000000..3f0496d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.himelbrand.ble.peripheral" >
++
++    <uses-sdk android:minSdkVersion="24" />
++
++    <uses-permission android:name="android.permission.BLUETOOTH" />
++    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json b/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+new file mode 100644
+index 0000000..08f4ebe
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+@@ -0,0 +1 @@
++0 Warning/Error
+\ No newline at end of file
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar b/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar
+new file mode 100644
+index 0000000..41e3d91
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar differ
+diff --git a/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt b/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+new file mode 100644
+index 0000000..cce422d
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+@@ -0,0 +1 @@
++com.himelbrand.ble.peripheral
+diff --git a/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..e0001e2
+--- /dev/null
++++ b/node_modules/react-native-ble-peripheral/android/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,25 @@
++-- Merging decision tree log ---
++manifest
++ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:1-5:12
++INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:1-5:12
++	package
++		ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:2:5-44
++		INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	xmlns:android
++		ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:1:11-69
++uses-permission#android.permission.BLUETOOTH
++ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:5-68
++	android:name
++		ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:3:22-65
++uses-permission#android.permission.BLUETOOTH_ADMIN
++ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:5-74
++	android:name
++		ADDED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml:4:22-71
++uses-sdk
++INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from D:\Github\ResQMesh\node_modules\react-native-ble-peripheral\android\src\main\AndroidManifest.xml
+diff --git a/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
+new file mode 100644
+index 0000000..edee908
+Binary files /dev/null and b/node_modules/react-native-ble-peripheral/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java b/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
+index 71a5f60..e66e5a7 100644
+--- a/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
++++ b/node_modules/react-native-ble-peripheral/android/src/main/java/com/himelbrand/ble/peripheral/RNBLEModule.java
+@@ -22,7 +22,6 @@ import android.content.Context;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.os.ParcelUuid;
+-import android.support.v7.app.AppCompatActivity;
+ import android.text.TextUtils;
+ import android.util.Log;
+ 
+@@ -72,6 +71,8 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+     String name;
+     boolean advertising;
+     private Context context;
++    byte[] manufacturerData;
++    int manufacturerId = 0xFFFF;
+ 
+     public RNBLEModule(ReactApplicationContext reactContext) {
+         super(reactContext);
+@@ -80,6 +81,7 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+         this.servicesMap = new HashMap<String, BluetoothGattService>();
+         this.advertising = false;
+         this.name = "RN_BLE";
++        this.manufacturerData = null;
+     }
+ 
+     @Override
+@@ -93,6 +95,16 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+         Log.i("RNBLEModule", "name set to " + name);
+     }
+ 
++    @ReactMethod
++    public void setManufacturerData(int manufacturerId, ReadableArray data) {
++        this.manufacturerId = manufacturerId;
++        this.manufacturerData = new byte[data.size()];
++        for (int i = 0; i < data.size(); i++) {
++            this.manufacturerData[i] = (byte) data.getInt(i);
++        }
++        Log.i("RNBLEModule", "setManufacturerData: ID=" + manufacturerId + ", length=" + data.size());
++    }
++
+     @ReactMethod
+     public void addService(String uuid, Boolean primary) {
+         UUID SERVICE_UUID = UUID.fromString(uuid);
+@@ -184,11 +196,19 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+ 
+ 
+         AdvertiseData.Builder dataBuilder = new AdvertiseData.Builder()
+-                .setIncludeDeviceName(true);
++                .setIncludeDeviceName(false);
+         for (BluetoothGattService service : this.servicesMap.values()) {
+             dataBuilder.addServiceUuid(new ParcelUuid(service.getUuid()));
+         }
++        if (this.manufacturerData != null) {
++            dataBuilder.addManufacturerData(this.manufacturerId, this.manufacturerData);
++        }
+         AdvertiseData data = dataBuilder.build();
++
++        AdvertiseData.Builder scanResponseBuilder = new AdvertiseData.Builder()
++                .setIncludeDeviceName(true);
++        AdvertiseData scanResponse = scanResponseBuilder.build();
++
+         Log.i("RNBLEModule", data.toString());
+ 
+         advertisingCallback = new AdvertiseCallback() {
+@@ -209,7 +229,7 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+             }
+         };
+ 
+-        advertiser.startAdvertising(settings, data, advertisingCallback);
++        advertiser.startAdvertising(settings, data, scanResponse, advertisingCallback);
+ 
+     }
+     @ReactMethod
+@@ -227,7 +247,7 @@ public class RNBLEModule extends ReactContextBaseJavaModule{
+     public void sendNotificationToDevices(String serviceUUID,String charUUID,ReadableArray message) {
+         byte[] decoded = new byte[message.size()];
+         for (int i = 0; i < message.size(); i++) {
+-            decoded[i] = new Integer(message.getInt(i)).byteValue();
++            decoded[i] = (byte) message.getInt(i);
+         }
+         BluetoothGattCharacteristic characteristic = servicesMap.get(serviceUUID).getCharacteristic(UUID.fromString(charUUID));
+         characteristic.setValue(decoded);

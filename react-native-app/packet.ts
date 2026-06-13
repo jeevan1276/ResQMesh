@@ -52,11 +52,17 @@ export function encodePacket(msg: Message): ArrayBuffer {
   view.setUint32(6, msg.timestamp, true);
 
   // urgent flag (in first bit of byte 10)
-  view.setUint8(10, msg.urgent ? 0x80 : 0x00);
+  let byte10 = msg.urgent ? 0x80 : 0x00;
 
   // payload (max 10 chars, padded with zeros)
   const payloadBytes = encoder.encode(msg.payload.substring(0, 10));
-  for (let i = 0; i < payloadBytes.length && i < 10; i++) {
+  if (payloadBytes.length > 0) {
+    // Merge first byte of payload with urgent flag (lowest 7 bits of first byte of payload + bit 7 urgent)
+    byte10 |= (payloadBytes[0] & 0x7F);
+  }
+  view.setUint8(10, byte10);
+
+  for (let i = 1; i < payloadBytes.length && i < 10; i++) {
     view.setUint8(10 + i, payloadBytes[i]);
   }
 
@@ -91,7 +97,11 @@ export function decodePacket(buffer: ArrayBuffer): Message {
 
   // payload
   const payloadBuffer = buffer.slice(10, 20);
-  const payloadStr = decoder.decode(payloadBuffer).replace(/\0/g, "");
+  const payloadUint8 = new Uint8Array(payloadBuffer);
+  if (payloadUint8.length > 0) {
+    payloadUint8[0] &= 0x7F; // clear the MSB/urgent bit
+  }
+  const payloadStr = decoder.decode(payloadUint8).replace(/\0/g, "");
 
   return {
     msg_id,

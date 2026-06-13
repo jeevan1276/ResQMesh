@@ -9,7 +9,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
   StyleSheet,
   SafeAreaView,
   TextInput,
@@ -17,6 +16,8 @@ import {
 } from "react-native";
 import { MeshBleManager } from "./MeshBleManager";
 import { Message, createMessage, MSG_TYPE } from "./packet";
+import { classifyUrgency } from "./UrgencyClassifier";
+import { DEMO_MESSAGES } from "./DemoData";
 
 export default function App() {
   // Generate random node ID (0-65535)
@@ -24,6 +25,7 @@ export default function App() {
   const nodeId = nodeIdRef.current;
 
   const [meshManager, setMeshManager] = useState<MeshBleManager | null>(null);
+  const meshManagerRef = useRef<MeshBleManager | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isScanning, setIsScanning] = useState(false);
   const [isAdvertising, setIsAdvertising] = useState(false);
@@ -38,22 +40,35 @@ export default function App() {
 
       // Set message callback
       manager.setMessageCallback((msg) => {
-        setMessages((prev) => {
-          const isDuplicate = prev.some((m) => m.msg_id === msg.msg_id);
+        setMessages((prev: Message[]) => {
+          const isDuplicate = prev.some((m: Message) => m.msg_id === msg.msg_id);
           if (isDuplicate) return prev;
           return [msg, ...prev]; // Add to top
         });
       });
 
+      meshManagerRef.current = manager;
       setMeshManager(manager);
-      setStats(`Node ID: ${nodeId}\nStatus: Ready`);
+      setStats(`Node ID: ${nodeId}\nStatus: Initializing...`);
+
+      // Automatically start scanning and advertising
+      const startServices = async () => {
+        await manager.startAdvertising();
+        setIsAdvertising(true);
+        await manager.startScanning(() => {});
+        setIsScanning(true);
+        setStats(`Node ID: ${nodeId}\nStatus: 🔴 Scanning & Advertising`);
+      };
+
+      startServices();
     };
 
     init();
 
+
     return () => {
-      if (meshManager) {
-        meshManager.destroy();
+      if (meshManagerRef.current) {
+        meshManagerRef.current.destroy();
       }
     };
   }, []);
@@ -75,85 +90,57 @@ export default function App() {
     return () => clearInterval(interval);
   }, [isScanning, meshManager]);
 
-  const handleStartScanning = async () => {
-    if (!meshManager) return;
-
-    if (!isScanning) {
-      setIsScanning(true);
-      await meshManager.startScanning((deviceData) => {
-        // Process device data
-      });
-    } else {
-      setIsScanning(false);
-      await meshManager.destroy();
-    }
-  };
-
-  const handleStartAdvertising = async () => {
-    if (!meshManager) return;
-
-    if (!isAdvertising) {
-      setIsAdvertising(true);
-      await meshManager.startAdvertising();
-    } else {
-      setIsAdvertising(false);
-    }
-  };
-
   const handleSendMessage = async () => {
-    if (!meshManager || !messageText.trim()) return;
+    if (!messageText.trim()) return;
 
+    const isUrgent = classifyUrgency(messageText);
     const msg = createMessage(
       nodeId,
       MSG_TYPE.DISTRESS,
-      messageText.trim(),
-      true
+      messageText,
+      isUrgent
     );
 
-    await meshManager.sendMessage(msg);
-    setMessageText("");
-
     // Add to local list immediately
-    setMessages((prev) => [msg, ...prev]);
+    setMessages((prev: Message[]) => [msg, ...prev]);
+
+    // Simulate relay
+    if (meshManager) {
+      meshManager.sendMessage(msg);
+    }
+  };
+
+  const handleReplay = () => {
+    let delay = 0;
+    DEMO_MESSAGES.forEach((demoMsg, index) => {
+      setTimeout(() => {
+        const isUrgent = classifyUrgency(demoMsg.payload!);
+        const msg = createMessage(
+          demoMsg.origin_id!,
+          MSG_TYPE.DISTRESS,
+          demoMsg.payload!,
+          isUrgent
+        );
+        // Manually set hop count for demo
+        msg.hop_count = demoMsg.hop_count!;
+
+        // Add to UI
+        setMessages((prev: Message[]) => [msg, ...prev]);
+
+        // Simulate relay
+        if (meshManager) {
+          meshManager.sendMessage(msg);
+        }
+      }, delay);
+      delay += 1500; // Stagger the messages
+    });
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>DisasterMesh</Text>
-        <Text style={styles.subtitle}>BLE Mesh Network Demo</Text>
-      </View>
-
-      {/* Stats Box */}
-      <View style={styles.statsBox}>
-        <Text style={styles.statsText}>{stats}</Text>
-      </View>
-
-      {/* Control Buttons */}
-      <View style={styles.controlsSection}>
-        <TouchableOpacity
-          style={[
-            styles.button,
-            isScanning ? styles.buttonActive : styles.buttonInactive,
-          ]}
-          onPress={handleStartScanning}
-        >
-          <Text style={styles.buttonText}>
-            {isScanning ? "Stop Scanning" : "Start Scanning"}
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[
-            styles.button,
-            isAdvertising ? styles.buttonActive : styles.buttonInactive,
-          ]}
-          onPress={handleStartAdvertising}
-        >
-          <Text style={styles.buttonText}>
-            {isAdvertising ? "Stop Advertising" : "Start Advertising"}
-          </Text>
-        </TouchableOpacity>
+        <Text style={styles.subtitle}>React Native App</Text>
       </View>
 
       {/* Message Input */}
@@ -174,6 +161,11 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
+      {/* Replay Button */}
+      <TouchableOpacity style={styles.replayButton} onPress={handleReplay}>
+        <Text style={styles.buttonText}>Run Demo Replay</Text>
+      </TouchableOpacity>
+
       {/* Messages List */}
       <View style={styles.messagesContainer}>
         <Text style={styles.messagesTitle}>
@@ -181,12 +173,13 @@ export default function App() {
         </Text>
         <FlatList
           data={messages}
-          keyExtractor={(item) => `${item.msg_id}-${item.origin_id}`}
-          renderItem={({ item }) => (
+          keyExtractor={(item: Message) => `${item.msg_id}-${item.origin_id}`}
+          renderItem={({ item }: { item: Message }) => (
             <View
               style={[
                 styles.messageItem,
                 item.origin_id === nodeId && styles.messageItemOwn,
+                item.urgent && styles.messageItemUrgent,
               ]}
             >
               <View style={styles.messageHeader}>
@@ -194,7 +187,7 @@ export default function App() {
                   From Node {item.origin_id}
                 </Text>
                 <Text style={styles.messageHop}>
-                  {item.urgent ? "🔴 URGENT" : "⚪"} Hop {item.hop_count}
+                  Hop {item.hop_count}
                 </Text>
               </View>
               <Text style={styles.messagePayload}>{item.payload}</Text>
@@ -213,59 +206,37 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: '#111827', // Dark background
     paddingHorizontal: 12,
   },
   header: {
     paddingVertical: 16,
-    borderBottomWidth: 2,
-    borderBottomColor: "#2196F3",
+    borderBottomWidth: 1,
+    borderBottomColor: '#374151',
   },
   title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#2196F3",
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#F9FAFB',
   },
   subtitle: {
-    fontSize: 12,
-    color: "#666",
+    fontSize: 14,
+    color: '#9CA3AF',
     marginTop: 4,
   },
   statsBox: {
-    backgroundColor: "#fff",
+    backgroundColor: '#1F2937',
     borderRadius: 8,
     padding: 12,
     marginVertical: 12,
     borderLeftWidth: 4,
-    borderLeftColor: "#2196F3",
+    borderLeftColor: '#3B82F6',
   },
   statsText: {
     fontSize: 13,
-    color: "#333",
+    color: '#D1D5DB',
     fontFamily: "monospace",
     lineHeight: 20,
-  },
-  controlsSection: {
-    flexDirection: "row",
-    gap: 8,
-    marginBottom: 12,
-  },
-  button: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 6,
-    alignItems: "center",
-  },
-  buttonActive: {
-    backgroundColor: "#4CAF50",
-  },
-  buttonInactive: {
-    backgroundColor: "#ddd",
-  },
-  buttonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 12,
   },
   inputSection: {
     flexDirection: "row",
@@ -274,16 +245,16 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#1F2937',
     borderRadius: 6,
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: "#ddd",
-    color: "#333",
+    borderColor: '#374151',
+    color: '#F9FAFB',
   },
   sendButton: {
-    backgroundColor: "#2196F3",
+    backgroundColor: '#3B82F6',
     paddingHorizontal: 16,
     borderRadius: 6,
     justifyContent: "center",
@@ -292,29 +263,46 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
   },
+  replayButton: {
+    backgroundColor: '#16A34A',
+    padding: 12,
+    borderRadius: 6,
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 14,
+  },
   messagesContainer: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#1F2937',
     borderRadius: 8,
     padding: 12,
   },
   messagesTitle: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "bold",
-    color: "#333",
+    color: '#F9FAFB',
     marginBottom: 8,
   },
   messageItem: {
-    backgroundColor: "#f9f9f9",
-    borderLeftWidth: 3,
-    borderLeftColor: "#FF9800",
+    backgroundColor: '#374151',
+    borderLeftWidth: 4,
+    borderLeftColor: '#9CA3AF', // Default color for relayed
     padding: 10,
     marginBottom: 8,
     borderRadius: 4,
   },
   messageItemOwn: {
-    backgroundColor: "#E3F2FD",
-    borderLeftColor: "#2196F3",
+    backgroundColor: '#1E40AF',
+    borderLeftColor: '#3B82F6',
+  },
+  messageItemUrgent: {
+    borderLeftColor: '#EF4444',
+    borderWidth: 1,
+    borderColor: '#EF4444',
   },
   messageHeader: {
     flexDirection: "row",
@@ -324,19 +312,19 @@ const styles = StyleSheet.create({
   messageOrigin: {
     fontSize: 12,
     fontWeight: "bold",
-    color: "#333",
+    color: '#E5E7EB',
   },
   messageHop: {
     fontSize: 11,
-    color: "#666",
+    color: '#9CA3AF',
   },
   messagePayload: {
-    fontSize: 14,
-    color: "#333",
+    fontSize: 15,
+    color: '#F9FAFB',
     marginBottom: 6,
   },
   messageTime: {
     fontSize: 10,
-    color: "#999",
+    color: '#9CA3AF',
   },
 });

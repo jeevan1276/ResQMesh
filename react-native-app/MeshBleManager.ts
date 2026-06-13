@@ -7,7 +7,10 @@
  * - Message relay logic
  */
 
-import { BleManager } from "react-native-ble-plx";
+import { BleManager, Device } from 'react-native-ble-plx';
+// @ts-ignore
+import BlePeripheral from 'react-native-ble-peripheral';
+import { Buffer } from 'buffer';
 import { Platform, NativeModules, PermissionsAndroid } from "react-native";
 import { Message, encodePacket, decodePacket } from "./packet";
 
@@ -17,61 +20,68 @@ const ADVERTISING_NAME = "DisasterMesh";
 
 export class MeshBleManager {
   private bleManager: BleManager;
+  private seenMessages: Map<number, number> = new Map();
+  private messageDatabase: Map<number, Message> = new Map();
+  private onMessageReceived: ((msg: Message) => void) | null = null;
   private nodeId: number;
-  private seenMessages: Map<number, number> = new Map(); // msg_id -> timestamp
-  private messageDatabase: Map<number, Message> = new Map(); // msg_id -> message
-
-  private onMessageReceived?: (msg: Message) => void;
+  private serviceUUID = '0000180D-0000-1000-8000-00805F9B34FB'; // Heart Rate Service UUID
 
   constructor(nodeId: number) {
-    this.bleManager = new BleManager();
     this.nodeId = nodeId;
+    this.bleManager = new BleManager();
   }
 
-  /**
-   * Initialize BLE and request permissions
-   */
-  async initialize(): Promise<void> {
-    if (Platform.OS === "android") {
-      const permissions = [
-        PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN,
-        PermissionsAndroid.PERMISSIONS.BLUETOOTH_ADVERTISE,
-        PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
-      ];
+  async requestPermissions(): Promise<boolean> {
+    if (Platform.OS !== 'android') return true;
 
-      try {
-        const granted = await PermissionsAndroid.requestMultiple(permissions);
-        console.log("Permissions granted:", granted);
-      } catch (err) {
-        console.error("Permission error:", err);
+    try {
+      if (Platform.Version >= 31) {
+        const granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN,
+          PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
+          PermissionsAndroid.PERMISSIONS.BLUETOOTH_ADVERTISE,
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        ]);
+        return (
+          granted[PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN] === PermissionsAndroid.RESULTS.GRANTED &&
+          granted[PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT] === PermissionsAndroid.RESULTS.GRANTED &&
+          granted[PermissionsAndroid.PERMISSIONS.BLUETOOTH_ADVERTISE] === PermissionsAndroid.RESULTS.GRANTED &&
+          granted[PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION] === PermissionsAndroid.RESULTS.GRANTED
+        );
+      } else {
+        const granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        ]);
+        return granted[PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION] === PermissionsAndroid.RESULTS.GRANTED;
       }
+    } catch (err) {
+      console.error("Failed to request permissions:", err);
+      return false;
     }
+  }
 
-    // Test BLE availability
-    const state = await this.bleManager.state();
-    console.log("BLE State:", state);
+  async initialize() {
+    const hasPermission = await this.requestPermissions();
+    if (!hasPermission) {
+      console.warn("BLE Permissions not granted!");
+    }
+    
+    console.log("BLE Peripheral initialized (no manual init needed)");
   }
 
   /**
    * Start advertising our messages (broadcast)
    */
-  async startAdvertising(): Promise<void> {
+  async startAdvertising() {
     try {
-      console.log(`[Node ${this.nodeId}] Starting BLE advertising...`);
-
-      // Android-specific advertising
-      if (Platform.OS === "android") {
-        // Use native module for advertising
-        const { BleModule } = NativeModules;
-        if (BleModule?.startAdvertising) {
-          await BleModule.startAdvertising(
-            ADVERTISING_NAME,
-            MESH_SERVICE_UUID
-          );
-        }
-      }
-    } catch (err) {
-      console.error("Error starting advertising:", err);
+      const packet = Buffer.from([this.nodeId & 0xFF, (this.nodeId >> 8) & 0xFF]); // Example packet
+      await BlePeripheral.setName(ADVERTISING_NAME);
+      await BlePeripheral.addService(this.serviceUUID, true);
+      await BlePeripheral.setManufacturerData(65535, Array.from(packet));
+      await BlePeripheral.start();
+      console.log("Advertising started");
+    } catch (error) {
+      console.error("Advertising failed to start", error);
     }
   }
 
@@ -99,7 +109,12 @@ export class MeshBleManager {
           // Extract and process payload from advertisement data
           if (device.manufacturerData) {
             try {
-              onDeviceFound(device.manufacturerData);
+              const buffer = Buffer.from(device.manufacturerData, 'base64');
+              // The first 2 bytes are the manufacturer ID. The remaining bytes are the packet.
+              if (buffer.length >= 22) {
+                const packetBuffer = new Uint8Array(buffer).slice(2).buffer;
+                this.receiveMessage(packetBuffer);
+              }
             } catch (err) {
               console.error("Error processing device data:", err);
             }
@@ -111,13 +126,21 @@ export class MeshBleManager {
     }
   }
 
+  private cleanSeenMessages() {
+    const now = Date.now();
+    const TTL = 5 * 60 * 1000; // 5 minutes TTL
+    for (const [msgId, timestamp] of this.seenMessages.entries()) {
+      if (now - timestamp > TTL) {
+        this.seenMessages.delete(msgId);
+      }
+    }
+  }
+
   /**
    * Send a message (advertise it to nearby nodes)
    */
   async sendMessage(msg: Message): Promise<void> {
-    console.log(`[Node ${this.nodeId}] Originating message:`, msg);
-
-    // Store locally
+    this.cleanSeenMessages();
     this.seenMessages.set(msg.msg_id, Date.now());
     this.messageDatabase.set(msg.msg_id, msg);
 
@@ -128,10 +151,20 @@ export class MeshBleManager {
 
     // Advertise via BLE
     const packet = encodePacket(msg);
-    console.log(`[Node ${this.nodeId}] Broadcasting packet (${packet.byteLength} bytes)`);
 
-    // In real app, this would use the BLE advertising mechanism
-    // to include the packet data
+    try {
+      // Stop current advertising to update the payload
+      await BlePeripheral.stop();
+      
+      // Create a new service with the updated manufacturer data
+      await BlePeripheral.setName(ADVERTISING_NAME);
+      await BlePeripheral.addService(this.serviceUUID, true);
+      await BlePeripheral.setManufacturerData(65535, Array.from(new Uint8Array(packet)));
+
+      await BlePeripheral.start();
+    } catch (error) {
+      console.error("Failed to send message via advertising", error);
+    }
   }
 
   /**
@@ -139,6 +172,7 @@ export class MeshBleManager {
    */
   async receiveMessage(packetBuffer: ArrayBuffer): Promise<void> {
     try {
+      this.cleanSeenMessages();
       const msg = decodePacket(packetBuffer);
       const msgId = msg.msg_id;
 
@@ -182,7 +216,15 @@ export class MeshBleManager {
       console.log(`[Node ${this.nodeId}] Relaying msg ${msgId} with hop_count ${relayMsg.hop_count}`);
 
       // Broadcast relay packet
-      // (same mechanism as sendMessage)
+      try {
+        await BlePeripheral.stop();
+        await BlePeripheral.setName(ADVERTISING_NAME);
+        await BlePeripheral.addService(this.serviceUUID, true);
+        await BlePeripheral.setManufacturerData(65535, Array.from(new Uint8Array(relayPacket)));
+        await BlePeripheral.start();
+      } catch (error) {
+        console.error("Failed to relay message via advertising", error);
+      }
     } catch (err) {
       console.error("Error receiving message:", err);
     }

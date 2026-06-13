@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "ResQMesh",
+    "slug": "resqmesh",
+    "version": "1.0.0",
+    "android": {
+      "package": "com.anonymous.resqmesh",
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_ADVERTISE",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-splash-screen",
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "modes": ["peripheral", "central"]
+        }
+      ]
+    ]
+  }
+}

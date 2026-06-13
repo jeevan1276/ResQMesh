@@ -1,0 +1,321 @@
+{"_e":"root:init","_t":1781368778568,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"devserver:start","_t":1781368778626,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781368779147,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781368788185,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"env:mode","_t":1781368798336,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"root:init","_t":1781372788379,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781372788380,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781372788382,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1781372788838,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781372789407,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781372795531,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1781372808028,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781372808029,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781372808031,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1781372808355,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781372808673,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781372814431,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1781372823695,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781372823696,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781372823699,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1781372824034,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781372824330,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781372830175,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1781372888041,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"devserver:start","_t":1781372888068,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781372888472,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781372896305,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1781373050315,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"devserver:start","_t":1781373050355,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781373050763,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781373057620,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1781373288092,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373288092,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373288097,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373288724,"id":"1","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:failed","_t":1781373288731,"id":"1","message":"Unable to resolve \"../../App\" from \"node_modules\\expo\\AppEntry.js\"\n  1 | import registerRootComponent from 'expo/src/launch/registerRootComponent';\n  2 |\n> 3 | import App from '../../App';\n    |                  ^\n  4 |\n  5 | registerRootComponent(App);\n  6 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../App","originModulePath":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:started","_t":1781373299001,"id":"2","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373299001,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373299003,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781373299008,"id":"2","message":"Unable to resolve \"../../App\" from \"node_modules\\expo\\AppEntry.js\"\n  1 | import registerRootComponent from 'expo/src/launch/registerRootComponent';\n  2 |\n> 3 | import App from '../../App';\n    |                  ^\n  4 |\n  5 | registerRootComponent(App);\n  6 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../App","originModulePath":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:started","_t":1781373307738,"id":"3","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373307738,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373307739,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781373307743,"id":"3","message":"Unable to resolve \"../../App\" from \"node_modules\\expo\\AppEntry.js\"\n  1 | import registerRootComponent from 'expo/src/launch/registerRootComponent';\n  2 |\n> 3 | import App from '../../App';\n    |                  ^\n  4 |\n  5 | registerRootComponent(App);\n  6 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"../../App","originModulePath":"node_modules\\expo\\AppEntry.js"}
+{"_e":"root:init","_t":1781373763305,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"root:init","_t":1781373938974,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"devserver:start","_t":1781373939032,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781373939506,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781373946324,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1781373958288,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373958289,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373958293,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373958408,"id":"1","progress":0.010000000000000002,"total":3,"current":1}
+{"_e":"metro:bundling:progress","_t":1781373958910,"id":"1","progress":0.04000000000000001,"total":3,"current":2}
+{"_e":"metro:bundling:progress","_t":1781373959012,"id":"1","progress":0.2025,"total":20,"current":9}
+{"_e":"metro:bundling:progress","_t":1781373959113,"id":"1","progress":0.2785493827160494,"total":36,"current":19}
+{"_e":"metro:bundling:progress","_t":1781373959213,"id":"1","progress":0.34451795841209837,"total":46,"current":27}
+{"_e":"metro:bundling:progress","_t":1781373959313,"id":"1","progress":0.34451795841209837,"total":59,"current":32}
+{"_e":"metro:bundling:progress","_t":1781373959420,"id":"1","progress":0.37734693877551023,"total":70,"current":43}
+{"_e":"metro:bundling:progress","_t":1781373959530,"id":"1","progress":0.48831470460153875,"total":83,"current":58}
+{"_e":"metro:bundling:progress","_t":1781373959630,"id":"1","progress":0.5587184981124376,"total":99,"current":74}
+{"_e":"metro:bundling:progress","_t":1781373959730,"id":"1","progress":0.6790980795610425,"total":108,"current":89}
+{"_e":"metro:bundling:progress","_t":1781373959840,"id":"1","progress":0.8679231499744321,"total":117,"current":109}
+{"_e":"metro:bundling:progress","_t":1781373959940,"id":"1","progress":0.8679231499744321,"total":227,"current":117}
+{"_e":"metro:bundling:progress","_t":1781373960049,"id":"1","progress":0.8679231499744321,"total":250,"current":134}
+{"_e":"metro:bundling:progress","_t":1781373960150,"id":"1","progress":0.8679231499744321,"total":270,"current":154}
+{"_e":"metro:bundling:progress","_t":1781373960252,"id":"1","progress":0.8679231499744321,"total":317,"current":200}
+{"_e":"metro:bundling:progress","_t":1781373960352,"id":"1","progress":0.8679231499744321,"total":367,"current":255}
+{"_e":"metro:bundling:progress","_t":1781373960452,"id":"1","progress":0.8679231499744321,"total":410,"current":291}
+{"_e":"metro:bundling:progress","_t":1781373960562,"id":"1","progress":0.8679231499744321,"total":460,"current":335}
+{"_e":"metro:bundling:progress","_t":1781373960662,"id":"1","progress":0.8679231499744321,"total":478,"current":391}
+{"_e":"metro:bundling:progress","_t":1781373960762,"id":"1","progress":0.8679231499744321,"total":501,"current":433}
+{"_e":"metro:bundling:progress","_t":1781373960862,"id":"1","progress":0.8679231499744321,"total":531,"current":483}
+{"_e":"metro:bundling:progress","_t":1781373960963,"id":"1","progress":0.8679231499744321,"total":558,"current":519}
+{"_e":"metro:bundling:progress","_t":1781373961064,"id":"1","progress":0.928897146254459,"total":580,"current":559}
+{"_e":"metro:bundling:progress","_t":1781373961166,"id":"1","progress":0.9932318299339271,"total":590,"current":588}
+{"_e":"metro:bundling:progress","_t":1781373961679,"id":"1","progress":0.9966130422292445,"total":590,"current":589}
+{"_e":"metro:bundling:progress","_t":1781373961779,"id":"1","progress":0.9966130422292445,"total":638,"current":610}
+{"_e":"metro:bundling:progress","_t":1781373961879,"id":"1","progress":0.9966130422292445,"total":672,"current":656}
+{"_e":"metro:bundling:progress","_t":1781373961980,"id":"1","progress":0.9970738859865934,"total":683,"current":682}
+{"_e":"metro:bundling:progress","_t":1781373962610,"id":"1","progress":0.999,"total":683,"current":683}
+{"_e":"metro:bundling:failed","_t":1781373962643,"id":"1","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mreact-native-app\\MeshBleManager.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"react-native-ble-plx\"\u001b[39m\n\n\u001b[90m \u001b[39mreact-native-app\\App.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./MeshBleManager\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./react-native-app/App\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781373971224,"id":"2","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373971224,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373971226,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373971326,"id":"2","progress":0.24142431244836626,"total":289,"current":142}
+{"_e":"metro:bundling:progress","_t":1781373971426,"id":"2","progress":0.5905040647675356,"total":488,"current":375}
+{"_e":"metro:bundling:progress","_t":1781373971527,"id":"2","progress":0.8759040105193951,"total":546,"current":511}
+{"_e":"metro:bundling:failed","_t":1781373971628,"id":"2","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mreact-native-app\\MeshBleManager.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"react-native-ble-plx\"\u001b[39m\n\n\u001b[90m \u001b[39mreact-native-app\\App.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./MeshBleManager\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./react-native-app/App\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781373978570,"id":"3","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373978570,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373978572,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373978672,"id":"3","progress":0.36,"total":350,"current":210}
+{"_e":"metro:bundling:progress","_t":1781373978781,"id":"3","progress":0.8444119795471148,"total":518,"current":476}
+{"_e":"metro:bundling:failed","_t":1781373978876,"id":"3","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mreact-native-app\\MeshBleManager.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"react-native-ble-plx\"\u001b[39m\n\n\u001b[90m \u001b[39mreact-native-app\\App.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./MeshBleManager\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./react-native-app/App\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781373995223,"id":"4","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781373995223,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373995224,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781373995326,"id":"4","progress":0.2293195794485221,"total":284,"current":136}
+{"_e":"metro:bundling:progress","_t":1781373995425,"id":"4","progress":0.8096319436603225,"total":489,"current":440}
+{"_e":"metro:bundling:progress","_t":1781373995531,"id":"4","progress":0.9594245523474295,"total":683,"current":669}
+{"_e":"metro:bundling:failed","_t":1781373995539,"id":"4","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mreact-native-app\\MeshBleManager.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"react-native-ble-plx\"\u001b[39m\n\n\u001b[90m \u001b[39mreact-native-app\\App.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./MeshBleManager\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./react-native-app/App\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781374002169,"id":"5","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781374002169,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781374002170,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781374002270,"id":"5","progress":0.3072679448483484,"total":359,"current":199}
+{"_e":"metro:bundling:progress","_t":1781374002372,"id":"5","progress":0.8457122892829069,"total":535,"current":492}
+{"_e":"metro:bundling:failed","_t":1781374002431,"id":"5","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mreact-native-app\\MeshBleManager.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"react-native-ble-plx\"\u001b[39m\n\n\u001b[90m \u001b[39mreact-native-app\\App.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./MeshBleManager\"\u001b[39m\n\n\u001b[90m \u001b[39mApp.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./react-native-app/App\"\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules\\expo\\AppEntry.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"../../App\"\u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"./node_modules/\u001b[1mexpo\u001b[22m/AppEntry\"\u001b[39m\u001b[90m\u001b[39m\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"root:init","_t":1781374009517,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781374009518,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781374009520,"mode":"development","files":[],"env":{}}
+{"_e":"root:init","_t":1781374030665,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781374030666,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781374030668,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1781374031030,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781374031402,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781374038254,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1781374039929,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781374040317,"id":"1","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"Import stack:\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781374056299,"id":"2","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781374056580,"id":"2","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"Import stack:\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781374063517,"id":"3","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781374063804,"id":"3","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"Import stack:\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"root:init","_t":1781374094335,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:bundling:started","_t":1781374100937,"id":"4","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781374101529,"id":"4","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"Import stack:\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"metro:bundling:started","_t":1781374114008,"id":"5","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781374114733,"id":"5","message":"Unable to resolve \"react-native-ble-plx\" from \"react-native-app\\MeshBleManager.ts\"\n   8 |  */\n   9 |\n> 10 | import { BleManager, Device } from 'react-native-ble-plx';\n     |                                     ^\n  11 | import BlePeripheral from 'react-native-ble-peripheral';\n  12 | import { Buffer } from 'buffer';\n  13 | import { Platform, NativeModules, PermissionsAndroid } from \"react-native\";","importStack":"Import stack:\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"react-native-ble-plx","originModulePath":"react-native-app\\MeshBleManager.ts"}
+{"_e":"root:init","_t":1781375445844,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:bundling:started","_t":1781375450518,"id":"6","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781375455629,"id":"6","message":"Unable to resolve \"./Utils\" from \"node_modules\\react-native-ble-plx\\src\\index.js\"\n   5 | export { Characteristic } from './Characteristic'\n   6 | export { Descriptor } from './Descriptor'\n>  7 | export { fullUUID } from './Utils'\n     |                           ^\n   8 | export { State, LogLevel, ConnectionPriority, ScanCallbackType, ScanMode } from './TypeDefinition'\n   9 |\n  10 | export type {","importStack":"Import stack:\n\n node_modules\\react-native-ble-plx\\src\\index.js\n | import \"./Utils\"\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"./Utils","originModulePath":"node_modules\\react-native-ble-plx\\src\\index.js"}
+{"_e":"metro:bundling:started","_t":1781375457467,"id":"7","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:failed","_t":1781375462180,"id":"7","message":"Unable to resolve \"./Utils\" from \"node_modules\\react-native-ble-plx\\src\\index.js\"\n   5 | export { Characteristic } from './Characteristic'\n   6 | export { Descriptor } from './Descriptor'\n>  7 | export { fullUUID } from './Utils'\n     |                           ^\n   8 | export { State, LogLevel, ConnectionPriority, ScanCallbackType, ScanMode } from './TypeDefinition'\n   9 |\n  10 | export type {","importStack":"Import stack:\n\n node_modules\\react-native-ble-plx\\src\\index.js\n | import \"./Utils\"\n\n react-native-app\\MeshBleManager.ts\n | import \"react-native-ble-plx\"\n\n react-native-app\\App.tsx\n | import \"./MeshBleManager\"\n\n App.tsx\n | import \"./react-native-app/App\"\n\n node_modules\\expo\\AppEntry.js\n | import \"../../App\"\n\n \n | import \"./node_modules/expo/AppEntry\"\n","filename":null,"targetModuleName":"./Utils","originModulePath":"node_modules\\react-native-ble-plx\\src\\index.js"}
+{"_e":"root:init","_t":1781375490392,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781375490395,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781375490403,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1781375490861,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781375491355,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781375498947,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1781375500091,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:done","_t":1781375504605,"id":"1","total":708,"ms":4514.5617}
+{"_e":"metro:client_log","_t":1781375506308,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1781375515553,"level":"error","data":["Failed to initialize BLE Peripheral","[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1781375515714,"level":"log","data":["Advertising started"]}
+{"_e":"metro:client_log","_t":1781375515770,"level":"log","data":["[Node 13860] Starting BLE scan..."]}
+{"_e":"root:init","_t":1781376520285,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:bundling:started","_t":1781376538179,"id":"4","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:done","_t":1781376538576,"id":"4","total":1,"ms":396.8931}
+{"_e":"metro:client_log","_t":1781376544573,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1781376549140,"level":"error","data":["Failed to initialize BLE Peripheral","[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1781376549140,"level":"log","data":["Advertising started"]}
+{"_e":"metro:client_log","_t":1781376549268,"level":"log","data":["[Node 49926] Starting BLE scan..."]}
+{"_e":"metro:client_log","_t":1781376550485,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376550768,"level":"log","data":["[Node 49926] Received msg 320 from 33229 (hop 0)"]}
+{"_e":"metro:client_log","_t":1781376550768,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376550768,"level":"log","data":["[Node 49926] Received msg 40365 from 13879 (hop 0)"]}
+{"_e":"metro:client_log","_t":1781376550820,"level":"log","data":["[Node 49926] Relaying msg 40365 with hop_count 1"]}
+{"_e":"metro:client_log","_t":1781376551021,"level":"log","data":["[Node 49926] Relaying msg 320 with hop_count 1"]}
+{"_e":"metro:client_log","_t":1781376551671,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376552209,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376552267,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376552267,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376552267,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376552267,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376553175,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376553334,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376553334,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376553334,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376553334,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376553334,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376555943,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376556057,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376556934,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376557628,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376557629,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376557629,"level":"log","data":["[Node 49926] Duplicate msg 40365, ignoring"]}
+{"_e":"metro:client_log","_t":1781376557629,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376557629,"level":"log","data":["[Node 49926] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376558221,"level":"log","data":["[Node 49926] Found peer:","DisasterMesh"]}
+{"_e":"metro:server_log","_t":1781376617687,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.resqmesh","220333QBI - 11 - API 30","60"]}
+{"_e":"root:init","_t":1781376739885,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:bundling:started","_t":1781376786860,"id":"7","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:done","_t":1781376786882,"id":"7","total":1,"ms":21.7637}
+{"_e":"root:init","_t":1781376788321,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:bundling:started","_t":1781376806640,"id":"8","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:done","_t":1781376806663,"id":"8","total":1,"ms":23.6496}
+{"_e":"metro:client_log","_t":1781376816685,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1781376819187,"level":"error","data":["Failed to initialize BLE Peripheral","[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1781376819557,"level":"log","data":["Advertising started"]}
+{"_e":"metro:client_log","_t":1781376819609,"level":"log","data":["[Node 50287] Starting BLE scan..."]}
+{"_e":"metro:client_log","_t":1781376820576,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376820867,"level":"log","data":["[Node 50287] Received msg 320 from 33229 (hop 0)"]}
+{"_e":"metro:client_log","_t":1781376820867,"level":"log","data":["[Node 50287] Relaying msg 320 with hop_count 1"]}
+{"_e":"metro:client_log","_t":1781376821035,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Received msg 50118 from 13879 (hop 0)"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376821155,"level":"log","data":["[Node 50287] Relaying msg 50118 with hop_count 1"]}
+{"_e":"metro:client_log","_t":1781376821732,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821952,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376821952,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821952,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376821952,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376821952,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376823120,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376823196,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376823196,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376823196,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376823196,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376823196,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376823560,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376823560,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376824398,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376824559,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376825732,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376825870,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376826969,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376827191,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376828154,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376828318,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376828319,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376829555,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Duplicate msg 50118, ignoring"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376829724,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376830538,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376830764,"level":"log","data":["[Node 50287] Received msg 65282 from 13879 (hop 0)"]}
+{"_e":"metro:client_log","_t":1781376830765,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376830765,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376830765,"level":"log","data":["[Node 50287] Relaying msg 65282 with hop_count 1"]}
+{"_e":"metro:client_log","_t":1781376831228,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376831365,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376831365,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832234,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376832469,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376833399,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376833635,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376834167,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376834167,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376834167,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376834167,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376834678,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376834678,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376834877,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376834877,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376835003,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376835003,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376835851,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Duplicate msg 320, ignoring"]}
+{"_e":"metro:client_log","_t":1781376837120,"level":"log","data":["[Node 50287] Found peer:","DisasterMesh"]}
+{"_e":"metro:client_log","_t":1781376837121,"level":"log","data":["[Node 50287] Duplicate msg 65282, ignoring"]}
+{"_e":"root:init","_t":1781377080885,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"env:mode","_t":1781377080886,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1781377080888,"mode":"development","files":[],"env":{}}
+{"_e":"root:init","_t":1781377236970,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"root:init","_t":1781377276280,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"devserver:start","_t":1781377276310,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1781377276728,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1781377282164,"atlas":false,"workers":10,"host":"::","port":8082}
+{"_e":"metro:bundling:started","_t":1781377336539,"id":"b","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:done","_t":1781377341190,"id":"b","total":1,"ms":4650.6913}
+{"_e":"root:init","_t":1781377342285,"format":"v0-jsonl","version":"56.1.15"}
+{"_e":"metro:client_log","_t":1781377348557,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1781377351228,"level":"error","data":["Failed to initialize BLE Peripheral","[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1781377351228,"level":"log","data":["Advertising started"]}
+{"_e":"metro:client_log","_t":1781377351228,"level":"log","data":["[Node 58278] Starting BLE scan..."]}
