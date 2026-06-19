@@ -1,4 +1,4 @@
-# ResQMesh (DisasterMesh) — Offline Disaster Response Mesh Network
+# ResQMesh — Offline Disaster Response Mesh Network
 
 ResQMesh is a robust, off-grid peer-to-peer messaging and triage system built for first responders and survivors during disasters. It operates under a hard, honest assumption: **the internet is completely gone, and we must communicate and triage local data without it.**
 
